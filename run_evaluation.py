@@ -59,8 +59,8 @@ def first_section(answer):
 def get_prompt(question):
     prompt = question['question']
     if question['task'] == 'Section Structural Lyrics Transcription':
-        # The released prompts still contain the unformatted template
-        prompt = prompt.replace('{{', '{').replace('}}', '}').replace('{section}', first_section(question['answer']))
+        # The released prompts still contain the unformatted template; use the placeholder of the paper's Table 5
+        prompt = prompt.replace('{{', '{').replace('}}', '}').replace('{section}', 'section_name')
     return prompt
 
 
